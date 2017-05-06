@@ -8,23 +8,36 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 
   <title>USGS</title>
-  <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+
 </head>
 <body>
+  <div class="row">
+    <form id="userInput" method="post" class="col s12">
+      <div class="input-field col s3">
+        <label for="startDate" class = 'dateLabel'>Starting Date</label>
+        <input type="date" placeholder="enter start date" id="startDate" name="startDate" class="validate" required/>
+      </div>
+      <div class="input-field col s3">
+        <label for="endDate" class = 'dateLabel'>Ending Date</label>
+        <input type="date" placeholder="enter end date" id="endDate" name="endDate" class="validate" required/>
+      </div>
+      <div class="input-field col s3">
+        <label for="magnitude" class = 'magLabel'>Magnitude</label>
+        <input type="number" placeholder="enter magnitude" id="magnitude" name="magnitude" class="validate" required/>
+      </div>
+      <div class="input-field col s3">
+        <button class = 'btn-large'>Display Earthquakes</button>
+      </div>
+    </form>
+  </div>
   <div id="map"></div>
     <script>
       var map;

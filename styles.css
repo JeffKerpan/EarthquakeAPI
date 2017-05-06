@@ -1,0 +1,36 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+ /* Put Map in a box */
+
+#map {
+  height: 700px;
+  width: 1400px;
+  position: relative;
+
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.dateLabel {
+  margin-top: 40px;
+}
+.magLabel {
+  margin-top: 70px;
+  font-size: 1rem;
+}
+.input-field label:not(.label-icon).active {
+    font-size: 15px;
+}
+
+.btn-large {
+  background-color: #9ead8f;
+}
+
+.btn-large:hover {
+  background-color: #8baf66;
+}
