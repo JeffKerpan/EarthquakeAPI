@@ -7,6 +7,7 @@
   height: 700px;
   width: 1400px;
   position: relative;
+  
 
 }
 
@@ -28,9 +29,9 @@ html, body {
 }
 
 .btn-large {
-  background-color: #9ead8f;
+  background-color: #8baf66
 }
 
 .btn-large:hover {
-  background-color: #8baf66;
+  background-color: #9ead8f
 }
