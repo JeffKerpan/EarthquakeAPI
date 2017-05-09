@@ -1,21 +1,41 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 
+ @media (max-width: 600px) {
+   /* Only applied if true */
+   .sidebar {
+     display: none;
+   }
+ }
+
  /* Put Map in a box */
-
 #map {
-  height: 700px;
-  width: 1400px;
-  position: relative;
-  
+  /*display:flex;
+  flex-direction:column;*/
 
+  width: auto;
+  position: inherit;
+  height: 73%
+  /*flex-grow:1;*/
+  /*max-width: none;
+  max-height: none;*/
 }
 
 /* Optional: Makes the sample page fill the window. */
-html, body {
+/*html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+}*/
+
+html, body, #mainContent {
+  height: 100%;
+}
+.shake-slow {
+height: 100%;
+width: 100%;
+/*visibility: hidden;*/
+
 }
 .dateLabel {
   margin-top: 40px;
@@ -29,9 +49,63 @@ html, body {
 }
 
 .btn-large {
-  background-color: #8baf66
+  background-color: #8baf66;
 }
 
 .btn-large:hover {
-  background-color: #9ead8f
+  background-color: #9ead8f;
 }
+
+.EARTHQUAKE {
+  height: 150px;
+  width: 1500px;
+  text-align: center;
+  color: #617a48;
+  text-shadow: 3px 3px 2px black;
+  background-image: url('http://nnimgt-a.akamaihd.net/transform/v1/crop/frm/GJZ5TVpAk84wrTzsQfLQRB/21141475-473c-47f5-88a7-9155da505dd7.jpg/r0_164_750_585_w1200_h678_fmax.jpg');
+  background-size: contain;
+  /*background-repeat: no-repeat;*/
+}
+
+/*.shake {
+  height:inherit;
+  width:inherit;
+}*/
+
+.background {
+  /*background-image: url('https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg');*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#mainContent {
+  /*visibility: hidden;*/
+}
+
+.hideThings {
+  postion: absolute;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
+}
+
+.hideEarthquake{
+  display: none;
+}
+
+.brand-logo {
+  text-align: center;
+  position: relative;
+}
+
+.nav-wrapper {
+  background-image: url('http://blog.360cities.net/wp-content/uploads/2011/04/592.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: inherit;
+  /*background-color: #284729;*/
+}
+
+/*.gmnoprint img {
+    max-width: none;
+}*/
