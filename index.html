@@ -9,13 +9,14 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 
+
   <!--CSS CDN to shake   -->
   <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
-
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" media="screen,projection">
 
+  <link rel="stylesheet" href="styles.css">
   <!--Import materialize.css-->
   <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
 
@@ -24,19 +25,24 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Cabin+Sketch|Fredericka+the+Great|Frijole|Luckiest+Guy|Neucha|Pangolin|Sigmar+One');
+  </style>
 
   <title>EARTHQUAKE</title>
 
 </head>
 <body>
-  <img class = 'shake-slow' src = "https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg">
+  <div class = 'noWhite'>
+    <img class = 'shake-hard' src = "https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg">
+  </div>
 
-  <div id = 'mainContent' class ='hideThings'>
+  <div id = "mainContent" class ="hideThings">
     <div>
      <nav>
        <div class="nav-wrapper">
-        <a href = '#' class="brand-logo center">EARTHQUAKE</a>
+        <a href = "#" id = 'brand-logo' class = 'center-block shake-slow shake-constant shake-constant--hover'>EARTHQUAKE</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Contact</i></a>
           <ul class="right hide-on-med-and-down">
            <li><a href="https://github.com/JeffKerpan"><img src = './Images/GitHub-Mark-32px.png'></a></li>
@@ -57,11 +63,11 @@
     <div class="row">
       <form id="userInput" method="post" class="col s12">
         <div class="input-field col s3">
-          <label for="startDate" class = 'dateLabel'>Starting Date</label>
+          <label for="startDate" class = 'dateLabel active'>Starting Date</label>
           <input type="date" placeholder="enter start date" id="startDate" name="startDate" class="validate" required/>
         </div>
         <div class="input-field col s3">
-          <label for="endDate" class = 'dateLabel'>Ending Date</label>
+          <label for="endDate" class = 'dateLabel active'>Ending Date</label>
           <input type="date" placeholder="enter end date" id="endDate" name="endDate" class="validate" required/>
         </div>
         <div class="input-field col s3">

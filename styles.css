@@ -10,19 +10,16 @@
 
  /* Put Map in a box */
 #map {
-  /*display:flex;
-  flex-direction:column;*/
-
   width: auto;
   position: inherit;
-  height: 73%
+  height: 73%;
   /*flex-grow:1;*/
   /*max-width: none;
   max-height: none;*/
 }
 
-/* Optional: Makes the sample page fill the window. */
-/*html, body {
+/* Optional: Makes the sample page fill the window.
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -31,19 +28,33 @@
 html, body, #mainContent {
   height: 100%;
 }
-.shake-slow {
+
+.shake-hard {
 height: 100%;
 width: 100%;
 /*visibility: hidden;*/
+}
 
+.noWhite {
+  background-image: url('https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.dateLabel {
-  margin-top: 40px;
+
+.startDate {
+  margin-top: 70px;
 }
+
 .magLabel {
   margin-top: 70px;
   font-size: 1rem;
 }
+
+.dateLabel {
+  margin-top: 70px;
+}
+
 .input-field label:not(.label-icon).active {
     font-size: 15px;
 }
@@ -56,7 +67,7 @@ width: 100%;
   background-color: #9ead8f;
 }
 
-.EARTHQUAKE {
+/*.EARTHQUAKE {
   height: 150px;
   width: 1500px;
   text-align: center;
@@ -65,25 +76,25 @@ width: 100%;
   background-image: url('http://nnimgt-a.akamaihd.net/transform/v1/crop/frm/GJZ5TVpAk84wrTzsQfLQRB/21141475-473c-47f5-88a7-9155da505dd7.jpg/r0_164_750_585_w1200_h678_fmax.jpg');
   background-size: contain;
   /*background-repeat: no-repeat;*/
-}
+/*}
 
 /*.shake {
   height:inherit;
   width:inherit;
 }*/
 
-.background {
+/*.background {*/
   /*background-image: url('https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg');*/
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
-#mainContent {
-  /*visibility: hidden;*/
-}
+/*#mainContent {
+  visibility: hidden;
+}*/
 
 .hideThings {
-  postion: absolute;
+  /*postion: absolute;*/
   top: -9999px;
   left: -9999px;
   visibility: hidden;
@@ -93,9 +104,20 @@ width: 100%;
   display: none;
 }
 
-.brand-logo {
+#brand-logo {
+  text-align: center;
+  position: inherit;
+  font-family: 'Frijole', cursive;
+  font-size: 30px;
+  /*@include do-shake('shake-crazy', 40, 40, 20, 100ms, .1, $opacity: true);*/
+}
+
+.shak {
   text-align: center;
   position: relative;
+  /*font-family: 'Frijole', cursive;*/
+	/*@include do-shake('shake-crazy', 40, 40, 20, 100ms, .1, $opacity: true);*/
+
 }
 
 .nav-wrapper {

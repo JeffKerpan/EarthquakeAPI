@@ -1,8 +1,7 @@
 //Shaking a picture for a set amount of time when the page loads and then hiding that picture and showing the main content of the page.
-var $shakeSlow = $('.shake-slow');
+var $shakeSlow = $('.shake-hard');
 var $mainContent = $('#mainContent');
-var timeout = setTimeout(function(){
-  console.log('Hello Shannon');
+var timeout = setTimeout(function() {
   $shakeSlow.addClass('hideEarthquake');
   $mainContent.removeClass('hideThings');
 }, 1000);
