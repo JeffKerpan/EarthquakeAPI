@@ -98,16 +98,16 @@ var $body = $('body');
       // }
 
         //Populates the Circles on the Google Map in the correct position but the scale based on magnitude doesn't work and the Circles are on the map but VERY small
-        let adjMag = (this.properties.mag * 1000000)/10;
-        // let mag = Math.sqrt(Math.pow(50, this.properties.mag))/2;
-        console.log(adjMag);
+        // let adjMag = (this.properties.mag * 1000000)/10;
+        let mag = Math.pow(2, this.properties.mag)*10000;
+        console.log(mag);
         let circ = new google.maps.Circle({
          center:latLng,
          clickable:true,
          fillColor:'red',
          fillOpacity:0.3,
          map:map,
-         radius:adjMag,
+         radius:mag,
         //  scale: mag,
          strokeColor:'white',
         //  strokeOpacity:0.3,
