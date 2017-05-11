@@ -127,6 +127,14 @@ width: 100%;
   cursor: auto;
 }
 
+.icons {
+  background-color: white;
+}
+
+.icons:hover {
+  background-color: white;
+}
+
 .center {
   text-align: center;
 }
