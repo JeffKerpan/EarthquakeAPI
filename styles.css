@@ -13,28 +13,15 @@
   width: auto;
   position: inherit;
   height: calc(100% - 212px);
-  /*flex-grow:1;*/
-  /*max-width: none;
-  max-height: none;*/
 }
-
-/* Optional: Makes the sample page fill the window.
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}*/
 
 html, body, #mainContent {
   height: 100%;
-  /*width: 110vh;*/
-
 }
 
 .shake-hard {
 height: 100%;
 width: 100%;
-/*visibility: hidden;*/
 }
 
 .noWhite {
@@ -63,43 +50,15 @@ width: 100%;
 
 .btn-large {
   background-color: #b8d6b4;
-  border-radius: 90%;
-  /*border-style:double;*/
-
+  border-radius: 42%;
+  font-size: 15px !important;
 }
 
 .btn-large:hover, .btn-large:focus {
   background-color: #67a443;
 }
 
-/*.EARTHQUAKE {
-  height: 150px;
-  width: 1500px;
-  text-align: center;
-  color: #617a48;
-  text-shadow: 3px 3px 2px black;
-  background-image: url('http://nnimgt-a.akamaihd.net/transform/v1/crop/frm/GJZ5TVpAk84wrTzsQfLQRB/21141475-473c-47f5-88a7-9155da505dd7.jpg/r0_164_750_585_w1200_h678_fmax.jpg');
-  background-size: contain;
-  /*background-repeat: no-repeat;*/
-/*}
-
-/*.shake {
-  height:inherit;
-  width:inherit;
-}*/
-
-/*.background {*/
-  /*background-image: url('https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg');*/
-  /*background-repeat: no-repeat;
-  background-size: cover;
-}*/
-
-/*#mainContent {
-  visibility: hidden;
-}*/
-
 .hideThings {
-  /*postion: absolute;*/
   top: -9999px;
   left: -9999px;
   visibility: hidden;
@@ -110,30 +69,16 @@ width: 100%;
 }
 
 #brand-logo {
-  /*height:100vh;*/
   text-align: center;
   position: inherit;
   font-family: 'Frijole', cursive;
   font-size: 30px;
-  /*height: 100px;*/
-  /*@include do-shake('shake-crazy', 40, 40, 20, 100ms, .1, $opacity: true);*/
 }
 
 .shak {
   text-align: center;
   position: relative;
-  /*font-family: 'Frijole', cursive;*/
-	/*@include do-shake('shake-crazy', 40, 40, 20, 100ms, .1, $opacity: true);*/
-
 }
-
-/*.nav-wrapper {
-  background-image: url('http://blog.360cities.net/wp-content/uploads/2011/04/592.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: inherit;
-  /*background-color: #284729;
-}*/
 
 .nav-wrapper {
   background-image: url('https://earthquake.usgs.gov/theme/site/earthquake/banner.png');
@@ -153,32 +98,39 @@ width: 100%;
 .footer-wrapper {
   background-image: url('https://www.superteachertools.net/jeopardyx/uploads/20140218/seismograph.jpeg');
   background-size: contain;
-  /*background-repeat:round;*/
-  /*background-color: #4a6b8e;*/
-  height:42px;
+  height:50px;
   padding: 5px 0;
-  /*background-color: #9ead8f;
-background: repeating-linear-gradient(30deg, #d7eadc 0%, #d7eadc 10%, #9ead8f 0%, #9ead8f 60%) 0 / 15px 15px;*/
 }
 
 .footer-item {
-  padding: 0;
+  padding: 0 !important;
   margin: 0 15px;
   line-height: 1 !important;
   height: 42px !important;
 }
 .footer-item i{
-  color: blue;
+  color: #0a0e11;
+  font-weight: bold;
+  font-size: 32px;
+  background-color: white;
+  background-blend-mode: luminosity;
   line-height: 42px !important;
   height: 42px !important;
+}
 
-
+.side-nav {
+  height: 152px;
+  width: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #e2e2e2;
+  cursor: auto;
 }
 
 .center {
   text-align: center;
 }
 
-/*.gmnoprint img {
+.gmnoprint img {
     max-width: none;
-}*/
+}

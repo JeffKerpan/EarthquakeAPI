@@ -4,10 +4,9 @@ var $mainContent = $('#mainContent');
 var timeout = setTimeout(function() {
   $shakeSlow.addClass('hideEarthquake');
   $mainContent.removeClass('hideThings');
-}, 1000);
+}, 3000);
 
 $(document).ready(function() {
-  // $("#datepicker").datepicker();
   $(".button-collapse").sideNav();
 
 //Initialize the Google Map inside of an IIFE so that it loads before everything else
@@ -15,8 +14,7 @@ $(document).ready(function() {
   (function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 2,
-      center: new google.maps.LatLng(20,175),
-      // center: new google.maps.LatLng(2.8,-187.3),
+      center: new google.maps.LatLng(-20,175),
       mapTypeId: 'terrain',
       zoomControl: true,
       mapTypeControl: true,
@@ -24,14 +22,11 @@ $(document).ready(function() {
       streetViewControl: false,
       rotateControl: false,
       fullscreenControl: true,
-
-      // zoomControlOptions: {
-      //   position: google.maps.ControlPosition.RIGHT_CENTER
-      // },
     });
+
     //Resize Google Maps mostly correct when browser window is shrunk down.  Was having issues with the Zoom buttons disapearing when the browser was small, mobile sized.
     google.maps.event.addDomListener(window, "resize", function() {
-      console.log('resize');
+      // console.log('resize');
       var center = map.getCenter();
       google.maps.event.trigger(map, "resize");
       map.setCenter(center);
@@ -44,6 +39,7 @@ var $body = $('body');
   //When the form/s are submitted this is the data.  The JSON call is dependant on all 3 of these forms being filled in and button clicked.
   function getData(event) {
   event.preventDefault();
+
   var $startDate = $('#startDate').val();
   var $endDate = $('#endDate').val();
   var $magnitude = $('#magnitude').val();
@@ -61,7 +57,6 @@ var $body = $('body');
         $body.append($element);
 
         //Pulling the new Latitudes and Longitudes for each Earthquake
-        console.log(this.properties);
         var $lat = this.geometry.coordinates[1];
         var $long = this.geometry.coordinates[0];
         var latLng = new google.maps.LatLng($lat,$long);
@@ -71,10 +66,7 @@ var $body = $('body');
           content: info_window_content(this.properties),
           maxWidth: 160,
           position: latLng
-
         });
-
-        // map.data.loadGeoJson(data);
 
         //Setting the style of the Markers to Circles
         map.data.setStyle(function(feature) {
@@ -84,24 +76,8 @@ var $body = $('body');
           };
         });
 
-       console.log(map.data);
-
-       //Function to populate the circles onto the Google Map
-      //  function getCircle(magnitude) {
-      //   return {
-      //     path: google.maps.SymbolPath.CIRCLE,
-      //     fillColor: 'red',
-      //     fillOpacity: 0.2,
-      //     scale: Math.pow(2, magnitude),
-      //     strokeColor: 'white',
-      //     strokeWeight: 0.5
-      //   };
-      // }
-
         //Populates the Circles on the Google Map in the correct position but the scale based on magnitude doesn't work and the Circles are on the map but VERY small
-        // let adjMag = (this.properties.mag * 1000000)/10;
         let mag = Math.pow(2, this.properties.mag)*10000;
-        console.log(mag);
         let circ = new google.maps.Circle({
          center:latLng,
          clickable:true,
@@ -109,42 +85,24 @@ var $body = $('body');
          fillOpacity:0.3,
          map:map,
          radius:mag,
-        //  scale: mag,
          strokeColor:'white',
-        //  strokeOpacity:0.3,
          strokeWeight: 0.7
        });
-
-       console.log(circ);
 
       //Adding an event listener when a User clicks on a Circle
        circ.addListener('click', function() {
        infowindow.open(map, circ);
        });
-      //  circ.addListener('focus', function() {
-      //    infowindow.close(map, circ);
-      //  });
-
-        //Previous was to get a Marker on the Google Map, is working!!!
-        //  var marker = new google.maps.Marker({
-        //    position: latLng,
-        //    map: map,
-        //    animation: google.maps.Animation.DROP
-        //  });
-
-        //Adding an event listener when a User clicks on a Marker to pop open an Info Window with information about that particular earthquake.
-        //  marker.addListener('click', function() {
-        //  infowindow.open(map, circ);
-        //  });
      });
   });
+
    $xhr.fail(function(err) {
      console.log(err);
    });
  }
+
  //Triggers the information submission.
  $('#userInput').on('submit', getData);
-
 });
 
 //Function to input earthquake info into the Info Windows
@@ -153,6 +111,6 @@ function info_window_content(earthquakeData) {
   earthquakeData.place.toString() + '<br>' +
   ' <strong>MAGNITUDE:</strong> ' +
   earthquakeData.mag.toString() + '<br>' +
-  ' <strong>TIME:</strong> ' +
+  ' <strong>DATE/TIME:</strong> ' +
   new Date(earthquakeData.time);
 }

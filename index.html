@@ -1,117 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 
+    <!--CSS CDN to shake   -->
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
 
-  <!--CSS CDN to shake   -->
-  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" media="screen">
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="styles.css">
 
-  <link rel="stylesheet" href="styles.css">
-  <!--Import materialize.css-->
-  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Cabin+Sketch|Fredericka+the+Great|Frijole|Luckiest+Guy|Neucha|Pangolin|Sigmar+One');
+    </style>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Cabin+Sketch|Fredericka+the+Great|Frijole|Luckiest+Guy|Neucha|Pangolin|Sigmar+One');
-  </style>
+    <title>EARTHQUAKE</title>
 
-  <title>EARTHQUAKE</title>
-
-</head>
-<body>
-  <div class = 'noWhite'>
-    <img class = 'shake-hard' src = "https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg">
-  </div>
-
-  <div id = "mainContent" class ="hideThings">
-    <div class="wrappy" style="height:100%;">
-    <div>
-     <nav>
-       <div class="nav-wrapper">
-        <a href = "#" id = 'brand-logo' class = 'shake-slow center-block'>EARTHQUAKE</a>
-        <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Contact</i></a>
-          <ul class="right hide-on-med-and-down">
-           <li><a href="https://github.com/JeffKerpan"><img src = './Images/GitHub-Mark-32px.png'></a></li>
-           <li><a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jkerpan@gmail.com&body=my-text"><img src="http://www.iconsfind.com/wp-content/uploads/2014/01/Communication-gmail-icon.png" width="42" height="32" border="0"></a></li>
-           <li><a target="_blank" href="https://www.linkedin.com/in/jeff-kerpan-1a870725/">
-           <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="136" height="32" border="0" alt="View Jeff Kerpan's profile on LinkedIn"></a></li>
-
-         </ul> -->
-         <!-- <ul class="side-nav" id="mobile-demo">
-          <li><a href="https://github.com/JeffKerpan">GitHub</a></li>
-          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jkerpan@gmail.com&body=my-text">Gmail</a></li>
-          <li><a href ="https://www.linkedin.com/in/jeff-kerpan-1a870725/">LinkedIn</a></li>
-         </ul> -->
-       </div>
-     </nav>
+  </head>
+  <body>
+    <div class = 'noWhite'>
+      <img class = 'shake-hard'
+        src = "https://i.kinja-img.com/gawker-media/image/upload/s--XpvLUxSu--/c_scale,fl_progressive,q_80,w_800/e1vkmed0sohnyhr0gaar.jpg"
+        alt = 'An aerial view of the San Andreas fault.'>
     </div>
-    <!-- <h3 class = 'EARTHQUAKE'>EARTHQUAKE</h3> -->
-    <div class="row">
-      <form id="userInput" method="post" class="col s12">
-        <div class="input-field col s3">
-          <label for="startDate" class = 'dateLabel active'>Starting Date</label>
-          <input type="date" placeholder="enter start date" id="startDate" name="startDate" class="validate" required/>
+
+    <div id = "mainContent" class ="hideThings">
+      <div class="wrappy" style="height:100%;">
+        <div>
+          <nav>
+            <div class="nav-wrapper">
+              <a href = "#" id = 'brand-logo'
+                class = 'shake-slow center-block'>
+                EARTHQUAKE
+            </a>
+            </div>
+          </nav>
         </div>
-        <div class="input-field col s3">
-          <label for="endDate" class = 'dateLabel active'>Ending Date</label>
-          <input type="date" placeholder="enter end date" id="endDate" name="endDate" class="validate" required/>
+
+        <div class="row">
+          <form id="userInput" method="post" class="col s12">
+            <div class="input-field col s3">
+              <label
+                for="startDate"
+                class = 'dateLabel active'>
+                Starting Date
+              </label>
+
+              <input
+                type="date"
+                id="startDate"
+                name="startDate"
+                class="validate" required/>
+            </div>
+
+            <div class="input-field col s3">
+              <label
+                for="endDate"
+                class='dateLabel active'>
+                Ending Date
+              </label>
+
+              <input
+                type="date"
+                id="endDate"
+                name="endDate"
+                class="validate" required/>
+            </div>
+
+            <div class="input-field col s3">
+              <label
+                for="magnitude"
+                class = 'magLabel'>
+                Magnitude</label>
+
+              <input
+                type="number"
+                placeholder="enter magnitude"
+                id="magnitude"
+                name="magnitude"
+                class="validate" required/>
+            </div>
+
+            <div class="input-field col s3">
+              <button class = 'btn-large'>
+                Display Earthquakes
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="input-field col s3">
-          <label for="magnitude" class = 'magLabel'>Magnitude</label>
-          <input type="number" placeholder="enter magnitude" id="magnitude" name="magnitude" class="validate" required/>
+
+        <div id="map"></div>
+
+        <div class= 'fix-footer'>
+          <nav style='height:32px;'>
+            <div class="footer-wrapper">
+              <a
+                href="#"
+                data-activates="mobile-demo" class="button-collapse footer-item">
+                <i
+                  class="material-icons">
+                  Contact
+                </i>
+              </a>
+
+            <!-- Change below link to a Links sep HTML page and center it in the footer/nav -->
+              <!-- <a target = '_blank' href= 'https://www.usgs.gov/' class = 'center'>USGS</a> -->
+
+              <ul class="right hide-on-med-and-down">
+                <li>
+                  <a
+                    target ="_blank"
+                    class="footer-item" href="https://github.com/JeffKerpan">
+                    <img src = './Images/GitHub-Mark-32px.png'
+                    alt = 'The GitHub Dr. Octocat icon'>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    target="_blank"
+                    class="footer-item" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jkerpan@gmail.com&body=my-text">
+                    <img               src="http://www.iconsfind.com/wp-content/uploads/2014/01/Communication-gmail-icon.png"
+                    width="42" height="32"
+                    alt = 'Gmail envelope icon'>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    target="_blank"
+                    class="footer-item" href="https://www.linkedin.com/in/jeff-kerpan-1a870725/">
+                    <img
+                    src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="136" height="32"
+                    alt="View Jeff Kerpan's profile on LinkedIn">
+                  </a>
+                </li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li>
+                  <a
+                    target ="_blank"
+                    class="footer-item center" href="https://github.com/JeffKerpan">
+                    <img
+                    src = './Images/GitHub-Mark-32px.png'
+                    alt = 'The GitHub Dr. Octocat icon'>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    target="_blank"
+                    class="footer-item center" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jkerpan@gmail.com&body=my-text">
+                    <img src="http://www.iconsfind.com/wp-content/uploads/2014/01/Communication-gmail-icon.png"
+                    width="42" height="32"
+                    alt = 'Gmail envelope icon'>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    target="_blank"
+                    class="footer-item center" href="https://www.linkedin.com/in/jeff-kerpan-1a870725/">
+                    <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png"
+                    width="136" height="32"
+                    alt="View Jeff Kerpan's profile on LinkedIn">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-        <div class="input-field col s3">
-          <button class = 'btn-large'>Display Earthquakes</button>
-        </div>
-      </form>
+      </div>
     </div>
-    <div id="map"></div>
-  <div class= 'fix-footer'>
-   <nav style='height:32px;'>
-     <div class="footer-wrapper">
-      <!-- <a href = "#" id = 'brand-logo' class = 'center-block shake-slow shake-constant shake-constant-hover'></a> -->
-      <a href="#" data-activates="mobile-demo" class="button-collapse footer-item"><i class="material-icons">Contact</i></a>
-
-    <!-- Change below link to a Links sep HTML page and center it in the footer/nav ----->
-      <a target = '_blank' href= 'https://www.usgs.gov/' class = 'center'>USGS</a>
-        <ul class="right hide-on-med-and-down">
-         <li><a target ="_blank" class="footer-item" href="https://github.com/JeffKerpan"><img src = './Images/GitHub-Mark-32px.png'></a></li>
-         <li><a target="_blank" class="footer-item" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jkerpan@gmail.com&body=my-text"><img src="http://www.iconsfind.com/wp-content/uploads/2014/01/Communication-gmail-icon.png" width="42" height="32" border="0"></a></li>
-         <li><a target="_blank" class="footer-item" href="https://www.linkedin.com/in/jeff-kerpan-1a870725/">
-         <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="136" height="32" border="0" alt="View Jeff Kerpan's profile on LinkedIn"></a></li>
-
-       </ul>
-       <ul class="side-nav" id="mobile-demo">
-        <li><a href="https://github.com/JeffKerpan">GitHub</a></li>
-        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jkerpan@gmail.com&body=my-text">Gmail</a></li>
-        <li><a href ="https://www.linkedin.com/in/jeff-kerpan-1a870725/">LinkedIn</a></li>
-       </ul>
-     </div>
-   </nav>
-  </div>
-</div>
-</div>
 
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYHDnHXqoEC8G-3pTIsi4T1FhVDylGQZ4">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYHDnHXqoEC8G-3pTIsi4T1FhVDylGQZ4">
     </script>
 
+    <script type="text/javascript" src='main.js'></script>
 
-  <script type="text/javascript" src='main.js'></script>
-</body>
+  </body>
 </html>
