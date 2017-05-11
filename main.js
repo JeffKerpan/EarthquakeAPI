@@ -4,7 +4,7 @@ var $mainContent = $('#mainContent');
 var timeout = setTimeout(function() {
   $shakeSlow.addClass('hideEarthquake');
   $mainContent.removeClass('hideThings');
-}, 1000);
+}, 3000);
 
 $(document).ready(function() {
   $(".button-collapse").sideNav();
