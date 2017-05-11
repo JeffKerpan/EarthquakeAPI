@@ -12,7 +12,7 @@
 #map {
   width: auto;
   position: inherit;
-  height: 73%;
+  height: calc(100% - 212px);
   /*flex-grow:1;*/
   /*max-width: none;
   max-height: none;*/
@@ -62,14 +62,14 @@ width: 100%;
 }
 
 .btn-large {
-  background-color: #8fb275;
+  background-color: #b8d6b4;
   border-radius: 90%;
   /*border-style:double;*/
 
 }
 
-.btn-large:hover {
-  background-color: #c3dbb1;
+.btn-large:hover, .btn-large:focus {
+  background-color: #67a443;
 }
 
 /*.EARTHQUAKE {
@@ -144,11 +144,34 @@ width: 100%;
   background-position: center;
 }
 
+.fix-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer-wrapper {
-  background-color: #6d90ce;
-  height:100px;
+  background-image: url('https://www.superteachertools.net/jeopardyx/uploads/20140218/seismograph.jpeg');
+  background-size: contain;
+  /*background-repeat:round;*/
+  /*background-color: #4a6b8e;*/
+  height:42px;
+  padding: 5px 0;
   /*background-color: #9ead8f;
 background: repeating-linear-gradient(30deg, #d7eadc 0%, #d7eadc 10%, #9ead8f 0%, #9ead8f 60%) 0 / 15px 15px;*/
+}
+
+.footer-item {
+  padding: 0;
+  margin: 0 15px;
+  line-height: 1 !important;
+  height: 42px !important;
+}
+.footer-item i{
+  color: blue;
+  line-height: 42px !important;
+  height: 42px !important;
+
 
 }
 
