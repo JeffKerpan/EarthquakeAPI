@@ -34,6 +34,7 @@ $(document).ready(function() {
           });
           console.log(map.data);
 
+<<<<<<< HEAD
           var marker = new google.maps.Marker({
             position: latLng,
             map: map,
@@ -44,6 +45,34 @@ $(document).ready(function() {
           });
         });
       });
+=======
+          var circ = new google.maps.Circle({
+            center:latLng,
+            clickable:true,
+            fillColor:'red',
+            fillOpacity:0.3,
+            map:map,
+            radius:1000,
+           //  scale: 100,
+            strokeColor:'red',
+            strokeOpacity:0.3
+          });
+
+          // var marker = new google.maps.Marker({
+          //   position: latLng,
+          //   map: map,
+          //   animation: google.maps.Animation.DROP
+          // });
+          // marker.addListener('click', function() {
+          //   infowindow.open(map, marker);
+            console.log(circ);
+            circ.addListener('click', function() {
+            infowindow.open(map, circ);
+            });
+          });
+        });
+      
+>>>>>>> Circles
 
       $xhr.fail(function(err) {
         console.log(err);
