@@ -9,7 +9,6 @@ var timeout = setTimeout(function() {
 $(document).ready(function() {
   $(".button-collapse").sideNav();
 
-
 //Initialize the Google Map inside of an IIFE so that it loads before everything else
   var map;
   (function initMap() {
@@ -37,17 +36,13 @@ $(document).ready(function() {
 //Appened things to the body quickly
 var $body = $('body');
 
-
   //When the form/s are submitted this is the data.  The JSON call is dependant on all 3 of these forms being filled in and button clicked.
   function getData(event) {
   event.preventDefault();
 
-
-
   var $startDate = $('#startDate').val();
   var $endDate = $('#endDate').val();
   var $magnitude = $('#magnitude').val();
-
 
   //Once getData function runs it then plugs the variables into the string.
   var string = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson' + '&starttime=' + $startDate + '&endtime=' + $endDate + '&minmagnitude=' + $magnitude;
@@ -103,19 +98,16 @@ var $body = $('body');
      });
   });
 
-
    $xhr.fail(function(err) {
      console.log(err);
    });
  }
-
 
  //Triggers the information submission.
 
  $('#userInput').on('submit', getData);
 
 });
-
 
 //Function to input earthquake info into the Info Windows
 
@@ -125,6 +117,5 @@ function info_window_content(earthquakeData) {
   ' <strong>MAGNITUDE:</strong> ' +
   earthquakeData.mag.toString() + '<br>' +
   ' <strong>DATE/TIME:</strong> ' +
-
   new Date(earthquakeData.time);
 }
