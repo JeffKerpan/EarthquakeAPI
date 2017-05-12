@@ -1,4 +1,4 @@
-//Shaking a picture for a set amount of time when the page loads, then hiding that picture and then showing the main content of the page
+//Shaking a picture for a set amount of time when the page loads, hiding that picture after a setTimeout and then showing the main content of the page
 var $shakeHard = $('.shake-hard');
 var $mainContent = $('#mainContent');
 var timeout = setTimeout(function() {
